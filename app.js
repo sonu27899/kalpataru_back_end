@@ -7,11 +7,13 @@ var logger = require('morgan');
 var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 var login= require('./routes/login_route');
 var signup=require('./routes/signup_route');
 var product=require('./routes/product_route');
 var category=require('./routes/category_route');
 var order=require('./routes/order_route');
+var category1=require('./routes/categoryname_route');
 
 var app = express();
 
@@ -32,6 +34,7 @@ app.use('/login',login);
 app.use('/signup',signup);
 app.use('/product',product);
 app.use('/category',category);
+app.use('/category1',category1);
 app.use('/order',order);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -50,8 +50,8 @@ router.get('/',function(req,res,next){
     });
   });
  
-  router.put('/:category_id',function(req,res,next){
-    category.updateCategory(req.params.category_id,req.body,function(err,rows){
+  router.put('/',function(req,res,next){
+    category.updateCategory(req.body,function(err,rows){
      if(err)
      {
      res.json(err);
