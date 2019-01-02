@@ -16,6 +16,10 @@ var category=require('./routes/category_route');
 var order=require('./routes/order_route');
 var category1=require('./routes/categoryname_route');
 
+//Employee
+var emplogin=require('./employee routes/login_route');
+var empviewbill=require('./employee routes/bill_route');
+var empbill_details=require('./employee routes/bill_details_route');
 var app = express();
 
 // view engine setup
@@ -38,6 +42,11 @@ app.use('/category',category);
 app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
+
+//Employee
+app.use('/emplogin',emplogin);
+app.use('/empviewbill',empviewbill);
+app.use('/empgetbilldetails',empbill_details);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
