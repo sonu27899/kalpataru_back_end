@@ -7,11 +7,23 @@ var logger = require('morgan');
 var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 var login= require('./routes/login_route');
 var signup=require('./routes/signup_route');
 var product=require('./routes/product_route');
+<<<<<<< HEAD
 var loginByEmail=require('./routes/loginbyemail');
+=======
+var employee=require('./routes/employee_route');
+var category=require('./routes/category_route');
+var order=require('./routes/order_route');
+var category1=require('./routes/categoryname_route');
+>>>>>>> edcc7ef3344112dcabb7b1501986aa7ac3d814e4
 
+//Employee
+var emplogin=require('./employee routes/login_route');
+var empviewbill=require('./employee routes/bill_route');
+var empbill_details=require('./employee routes/bill_details_route');
 var app = express();
 
 // view engine setup
@@ -31,6 +43,15 @@ app.use('/login',login);
 app.use('/loginByEmail',loginByEmail);
 app.use('/signup',signup);
 app.use('/product',product);
+app.use('/category',category);
+app.use('/category1',category1);
+app.use('/order',order);
+app.use('/employee',employee);
+
+//Employee
+app.use('/emplogin',emplogin);
+app.use('/empviewbill',empviewbill);
+app.use('/empgetbilldetails',empbill_details);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
