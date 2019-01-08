@@ -11,20 +11,21 @@ var usersRouter = require('./routes/users');
 var login= require('./routes/login_route');
 var signup=require('./routes/signup_route');
 var product=require('./routes/product_route');
-<<<<<<< HEAD
-var loginByEmail=require('./routes/loginbyemail');
-=======
 var employee=require('./routes/employee_route');
 var category=require('./routes/category_route');
 var order=require('./routes/order_route');
 var category1=require('./routes/categoryname_route');
->>>>>>> edcc7ef3344112dcabb7b1501986aa7ac3d814e4
+
+//user 
+var productByCategoryId=require('./routes/productByCategoryId');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
 var empbill_details=require('./employee routes/bill_details_route');
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,13 +41,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/login',login);
-app.use('/loginByEmail',loginByEmail);
 app.use('/signup',signup);
 app.use('/product',product);
 app.use('/category',category);
 app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
+//user
+app.use('/userproductByCategoryId',productByCategoryId);
 
 //Employee
 app.use('/emplogin',emplogin);
