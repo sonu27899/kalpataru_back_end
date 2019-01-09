@@ -2,6 +2,7 @@ var product=require('../models/product_model');
 var express = require('express');
 var router = express.Router();
 
+
 router.get('/',function(req,res,next){
     product.getAllProduct(function(err,rows){
      if(err)
