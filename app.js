@@ -23,6 +23,8 @@ var empbill_details=require('./employee routes/bill_details_route');
 var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
+var empvieworder=require('./employee routes/order_route');
+var loan=require('./employee routes/loan_route');
 var app = express();
 
 // view engine setup
@@ -45,7 +47,7 @@ app.use('/category',category);
 app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
-
+app.use('/loan',loan);
 //Employee
 app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);
@@ -53,6 +55,7 @@ app.use('/empgetbilldetails',empbill_details);
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);
 app.use('/empdoneempsalary',allempdonesalary);
+app.use('/empvieworder',empvieworder);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
