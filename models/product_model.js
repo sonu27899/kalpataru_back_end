@@ -3,7 +3,7 @@ var product={
 
     
     getAllProduct:function(callback){
-        return db.query("select * from product_tbl",callback); 
+        return db.query("select p.*,c.* from product_tbl p,category_tbl c where c.category_id=p.category_id",callback); 
         },
     getProductById:function(product_id,callback){
             return db.query("select * from product_tbl where product_id=?",[product_id],callback);

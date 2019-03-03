@@ -10,4 +10,13 @@ router.get("/", function(req, res, next) {
       }
     });
   });
+  router.put('/:employee_email',function(req,res,next){
+    salary_mode.updateStatus(req.params.employee_email,function(err,row){
+        if (err) {
+            res.json(err);
+          } else {
+            res.json(row);
+          }
+    });
+});
   module.exports = router;

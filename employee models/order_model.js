@@ -2,7 +2,7 @@ var db=require('../dbconnection');
 var order={
     getAllOrder(callback)
     {
-        return db.query("select * from order_tbl",callback);
+        return db.query("select u.*,o.* from user_tbl u,order_tbl o where o.fk_user_email=u.user_email",callback);
     },
     updateStatus:function(item,order_id,callback){
         console.log(item);

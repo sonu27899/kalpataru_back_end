@@ -6,6 +6,9 @@ var loan={
     {
         return db.query("select * from loan_tbl",callback);
     },
+    getuserdata(employee_email,callback){
+        return db.query("select * from employee_tbl where employee_email=?",[employee_email],callback);
+    },
     getLoanDetails(loan_id,callback){
         return db.query("select l.*,e.* from loan_tbl l,employee_tbl e where l.fk_employee_email=e.employee_email And l.loan_id=?",[loan_id],callback);
     },
