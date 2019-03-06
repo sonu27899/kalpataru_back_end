@@ -1,9 +1,10 @@
-var db=require('../dbconnection');
-var product={
+var db=require('../dbconnection'); 
 
+var product={
     
     getAllProduct:function(callback){
         return db.query("select * from product_tbl",callback); 
+        
         },
     getProductById:function(product_id,callback){
             return db.query("select * from product_tbl where product_id=?",[product_id],callback);
@@ -19,6 +20,12 @@ var product={
         },
     getProductByCategoryId:function(category_id,callback){
         return db.query("select * from product_tbl where category_id=?",[category_id],callback);        
+    },
+    TopProductByName:function(callback){
+        return db.query("select product_name, count(product_name) as attended from product_tbl group by product_name order by 2 desc limit 10",callback);
+    },
+    HighestProductPrice:function(callback){
+        return db.query("select * FROM product_tbl ORDER BY product_price desc LIMIT 10 ",callback);
     }
     
 };

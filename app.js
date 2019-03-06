@@ -9,15 +9,21 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var login= require('./routes/login_route');
+var loginByEmail= require('./routes/loginbyemail');
 var signup=require('./routes/signup_route');
 var product=require('./routes/product_route');
+var TopProduct=require('./routes/toporderofproduct_route');
+var ProductPrice=require('./routes/highestproductprice_route');
 var employee=require('./routes/employee_route');
 var category=require('./routes/category_route');
 var order=require('./routes/order_route');
 var category1=require('./routes/categoryname_route');
+var user=require('./routes/user_route');
+var wish=require('./routes/wishlist_route');
 
 //user 
 var productByCategoryId=require('./routes/productByCategoryId');
+var addtoCart=require('./routes/cart_route');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -41,14 +47,20 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/login',login);
+app.use('/loginbyemail',loginByEmail);
 app.use('/signup',signup);
 app.use('/product',product);
+app.use('/TopProduct',TopProduct);
+app.use('/ProductPrice',ProductPrice);
 app.use('/category',category);
 app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
-//user
+
+app.use('/user',user);
 app.use('/userproductByCategoryId',productByCategoryId);
+app.use('/addtocart',addtoCart);
+app.use('/wishlist',wish);
 
 //Employee
 app.use('/emplogin',emplogin);
