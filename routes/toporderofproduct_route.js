@@ -1,4 +1,4 @@
-var TopProduct=require('../models/product_model');
+var TopProduct=require('../models/dashboard_model');
 var express = require('express');
 var router = express.Router();
 

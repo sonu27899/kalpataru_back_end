@@ -1,9 +1,8 @@
-var ProductPrice=require('../models/dashboard_model');
+var countproduct = require('../models/dashboard_model');
 var express = require('express');
 var router = express.Router();
-
 router.get('/',function(req,res,next){
-    ProductPrice.HighestProductPrice(function(err,rows){
+    countproduct.CountProduct(function(err,rows){
      if(err)
      {
      res.json(err);
@@ -13,5 +12,4 @@ router.get('/',function(req,res,next){
      }
     });
   });
-
-  module.exports=router;
+  module.exports = router;

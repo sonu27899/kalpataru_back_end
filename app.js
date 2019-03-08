@@ -9,7 +9,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var login= require('./routes/login_route');
-var signup=require('./routes/signup_route');
 var product=require('./routes/product_route');
 var TopProduct=require('./routes/toporderofproduct_route');
 var ProductPrice=require('./routes/highestproductprice_route');
@@ -18,7 +17,17 @@ var category=require('./routes/category_route');
 var order=require('./routes/order_route');
 var category1=require('./routes/categoryname_route');
 var user=require('./routes/user_route');
-
+var ProductWithoutImage=require('./routes/productWithoutImage');
+var loan=require('./routes/loan_route');
+var loanReject=require('./routes/loan_route_reject');
+var loan_delete=require('./routes/loan_delete_route');
+var colour=require('./routes/colour_route');
+var countproduct=require('./routes/count_product_route');
+var countuser=require('./routes/count_user_route');
+var TopSellingProduct=require('./routes/topsellingproduct_route');
+var productpricesum=require('./routes/product_prize_sum_route');
+var userDetailByorder=require('./routes/getUserDetailsByOrder_route');
+var customerinvoice=require('./routes/customer_invoice_route');
 //Employee
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
@@ -39,7 +48,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/login',login);
-app.use('/signup',signup);
+app.use('/update_product_without_pic',ProductWithoutImage);
 app.use('/product',product);
 app.use('/TopProduct',TopProduct);
 app.use('/ProductPrice',ProductPrice);
@@ -48,7 +57,16 @@ app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
 app.use('/user',user);
-
+app.use('/loan',loan);
+app.use('/colour',colour);
+app.use('/loanReject',loanReject);
+app.use('/loandelete',loan_delete);
+app.use('/countproduct',countproduct);
+app.use('/countuser',countuser);
+app.use('/TopSellingProduct',TopSellingProduct);
+app.use('/productpricesum',productpricesum);
+app.use('/userDetailByOrder',userDetailByorder);
+app.use('/customerInvoice',customerinvoice);
 //Employee
 app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);

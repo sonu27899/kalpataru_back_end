@@ -1,9 +1,9 @@
-var ProductPrice=require('../models/dashboard_model');
+var userDetailByOrder=require('../models/dashboard_model');
 var express = require('express');
 var router = express.Router();
 
 router.get('/',function(req,res,next){
-    ProductPrice.HighestProductPrice(function(err,rows){
+    userDetailByOrder.getUserDetailsByorder(function(err,rows){
      if(err)
      {
      res.json(err);
