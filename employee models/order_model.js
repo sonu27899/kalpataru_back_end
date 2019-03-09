@@ -9,9 +9,8 @@ var order={
         return db.query("select o.*,u.* from order_tbl o,user_tbl u where  o.delievery_assign=? AND o.fk_user_email=u.user_email  ",[employee_email],callback);
         
     },
+
     updateStatus:function(item,order_id,callback){
-        console.log(item);
-        console.log(order_id);
         var status=Number;
         if(item.order_status==1)
         {
@@ -25,8 +24,12 @@ var order={
         {
             this.status=4
         }
-        db.query("update order_tbl set order_status=?,delievery_assign=? where order_id=?",[this.status,item.delievery_assign,order_id],callback);
+        return db.query("update order_tbl set order_status=?,delievery_assign=? where order_id=?",[this.status,item.delievery_assign,order_id],callback);
         
     },
+    getAllDelieveryBoy(callback)
+    {
+        return db.query("select * from employee_tbl where employee_designation='Delievery_Boy'",callback);
+    }
 }
 module.exports=order;
