@@ -2,8 +2,10 @@ var order=require('../models/order_model');
 var express = require('express');
 var router = express.Router();
 
-router.get('/',function(req,res,next){
-  order.getAllOrder(function(err,rows){
+
+router.post('/',function(req,res,next){
+  order.addOrder(req.body,function(err,rows){
+
    if(err)
    {
    res.json(err);
@@ -14,8 +16,10 @@ router.get('/',function(req,res,next){
   });
 });
 
-router.delete('/:order_id',function(req,res,next){
-  order.deleteOrder(req.params.order_id,function(err,rows){
+
+router.get('/',function(req,res,next){
+  order.getAllOrder(function(err,rows){
+
    if(err)
    {
    res.json(err);

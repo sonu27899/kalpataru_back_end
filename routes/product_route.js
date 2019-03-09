@@ -1,4 +1,7 @@
-var product = require('../models/product_model');
+
+
+var product=require('../models/product_model');
+
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
@@ -14,6 +17,7 @@ var storage = multer.diskStorage({
   }
 });
 var upload = multer({ storage: storage });
+
 
 router.put('/:product_id', upload.single('product_image'), function (req, res, next) {
   product.updateProduct(req.params.product_id, req.body,req.file.filename, function (err, rows) {
@@ -82,3 +86,19 @@ router.post('/', function (req, res, next) {
 //   });
 // });
 module.exports = router;
+
+
+
+  router.put('/:product_id',upload.single('product_image'),function(req,res,next){
+    product.updateproductwithpic(req.params.product_id,req.body,req.file.filename,function(err,rows){
+     if(err)
+     {
+     res.json(err);
+     }
+     else{
+     res.json(rows);
+     }
+    });
+  });
+  module.exports=router;
+
