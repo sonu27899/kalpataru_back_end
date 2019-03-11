@@ -10,6 +10,7 @@ var cart={
           return db.query("insert into cart_tbl values(?,?,?,?,?,?)",[item.product_id,item.size,item.quantity,item.user_email,item.payment_option,0],callback);        
         },
     deleteProduct:function(user_name,product_id,callback){
+        console.log(product_id,user_name);
             return  db.query("delete from cart_tbl where user_name=? AND product_id=?",[user_name,product_id],callback);
         },
     updatePayment:function(user_name,item,callback){
