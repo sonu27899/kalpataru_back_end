@@ -1,9 +1,9 @@
-var category1=require('../models/category_model');
+var TopProduct=require('../admin models/dashboard_model');
 var express = require('express');
 var router = express.Router();
 
-  router.get('/:category_name',function(req,res,next){
-    category1.getCategoryByName(req.params.category_name,function(err,rows){
+router.get('/',function(req,res,next){
+    TopProduct.TopProductByName(function(err,rows){
      if(err)
      {
      res.json(err);
@@ -13,4 +13,5 @@ var router = express.Router();
      }
     });
   });
+
   module.exports=router;

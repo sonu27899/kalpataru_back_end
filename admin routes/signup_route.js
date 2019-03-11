@@ -1,4 +1,4 @@
-var UserSignup=require('../models/signup_model');
+var UserSignup=require('../admin models/signup_model');
 var express = require('express');
 var router = express.Router();
 

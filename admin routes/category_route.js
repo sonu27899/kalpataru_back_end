@@ -1,4 +1,4 @@
-var category=require('../models/category_model');
+var category=require('../admin models/category_model');
 var express = require('express');
 var router = express.Router();
 
