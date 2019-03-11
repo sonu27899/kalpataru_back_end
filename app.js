@@ -5,12 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var cors=require('cors');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./employee routes/index');
+var usersRouter = require('./employee routes/users');
 
 
 //Admin
-var login= require('./routes/login_route');
+var login= require('./admin routes/login_route');
 var product=require('./admin routes/product_route');
 var TopProduct=require('./admin routes/toporderofproduct_route');
 var ProductPrice=require('./admin routes/highestproductprice_route');
@@ -32,7 +32,12 @@ var productpricesum=require('./admin routes/product_prize_sum_route');
 var userDetailByorder=require('./admin routes/getUserDetailsByOrder_route');
 var customerinvoice=require('./admin routes/customer_invoice_route');
 
+//User
+var loginByEmail= require('./user routes/loginbyemail');
 
+var wish=require('./user routes/wishlist_route'); 
+var productByCategoryId=require('./user routes/productByCategoryId');
+var addtoCart=require('./user routes/cart_route');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -52,9 +57,12 @@ var empmyloan=require('./employee routes/myloan_route');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -68,6 +76,7 @@ app.use('/users', usersRouter);
 //Admin
 app.use('/login',login);
 app.use('/update_product_without_pic',ProductWithoutImage);
+app.use('/signup',signup);
 app.use('/product',product);
 app.use('/TopProduct',TopProduct);
 app.use('/ProductPrice',ProductPrice);
@@ -89,6 +98,14 @@ app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
 
+
+
+
+//User
+app.use('/userproductByCategoryId',productByCategoryId);
+app.use('/addtocart',addtoCart);
+app.use('/wishlist',wish);
+app.use('/loginbyemail',loginByEmail);
 
 
 //Employee

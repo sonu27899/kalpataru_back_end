@@ -1,4 +1,4 @@
-var productImage = require('../models/product_model');
+var productImage = require('../admin models/product_model');
 var express = require('express');
 var router = express.Router();
 

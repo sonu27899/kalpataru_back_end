@@ -8,7 +8,7 @@ var dashboard={
         return db.query("select * FROM product_tbl ORDER BY product_price desc LIMIT 10 ",callback);
     },
     TopSellingProducts:function(callback){
-        return db.query("select  count(product_id) as attended from bill_tbl ",callback);
+        return db.query("select  count(fk_product_id) as attended from bill_tbl ",callback);
     },
     CountUser:function(callback){
         return db.query("select  count(user_email) as User from user_tbl ",callback);

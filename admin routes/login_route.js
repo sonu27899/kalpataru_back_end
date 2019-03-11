@@ -1,4 +1,4 @@
-var userlogin=require('../models/login_model');
+var userlogin=require('../admin models/login_model');
 var express = require('express');
 var router = express.Router();
 
