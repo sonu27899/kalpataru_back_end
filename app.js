@@ -45,7 +45,7 @@ var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
 var empvieworder=require('./employee routes/order_route');
-var loan=require('./employee routes/loan_route');
+var loanemp=require('./employee routes/loan_route');
 var empgetdataforloan=require('./employee routes/get_data_for_loan_route');
 var empmyprofile=require('./employee routes/myprofile_route');
 var empmywork=require('./employee routes/my_work_route');
@@ -73,15 +73,12 @@ app.use('/update_product_without_pic',ProductWithoutImage);
 app.use('/product',product);
 app.use('/TopProduct',TopProduct);
 app.use('/ProductPrice',ProductPrice);
-
 app.use('/signup',signup);
 app.use('/product',product);
-
 app.use('/category',category);
 app.use('/category1',category1);
 app.use('/order',order);
 app.use('/employee',employee);
-
 app.use('/user',user);
 app.use('/loan',loan);
 app.use('/colour',colour);
@@ -94,13 +91,13 @@ app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
 
-app.use('/loan',loan);
+
 
 //Employee
 app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);
 app.use('/empgetbilldetails',empbill_details);
-
+app.use('/loanemp',loanemp);
 
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);
