@@ -8,8 +8,9 @@ var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var login= require('./routes/login_route');
+
 //Admin
+var login= require('./routes/login_route');
 var product=require('./admin routes/product_route');
 var TopProduct=require('./admin routes/toporderofproduct_route');
 var ProductPrice=require('./admin routes/highestproductprice_route');
@@ -64,8 +65,8 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//Admin
 app.use('/login',login);
-
 app.use('/update_product_without_pic',ProductWithoutImage);
 app.use('/product',product);
 app.use('/TopProduct',TopProduct);
@@ -95,7 +96,6 @@ app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);
 app.use('/empgetbilldetails',empbill_details);
 app.use('/loanemp',loanemp);
-
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);
 app.use('/empdoneempsalary',allempdonesalary);
