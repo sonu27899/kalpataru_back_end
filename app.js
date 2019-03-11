@@ -30,6 +30,7 @@ var empmyprofile=require('./employee routes/myprofile_route');
 var empmywork=require('./employee routes/my_work_route');
 var empgetdelieveryboy=require('./employee routes/get_delievery_boy_route');
 var update_product_without_pic=require('./employee routes/update_product_without_pic');
+var empmyloan=require('./employee routes/myloan_route');
 var app = express();
 
 // view engine setup
@@ -66,6 +67,7 @@ app.use('/empmyprofile',empmyprofile);
 app.use('/empviewwork',empmywork);
 app.use('/empgetdelieveryboy',empgetdelieveryboy);
 app.use('/update_product_without_pic',update_product_without_pic);
+app.use('/empmyloan',empmyloan);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -20,5 +20,9 @@ var loan={
         
         return db.query("insert into loan_tbl (loan_amount,fk_employee_email,loan_issued_date,last_installment_date,loan_status,loan_reason,loan_months) values(?,?,?,?,?,?,?)",[item.loan_amount,item.fk_employee_email,issued_date,last_installment_date,loan_status,item.loan_reason,item.loan_months],callback);        
     },
+    getmyloan(employee_email,callback)
+    {
+        return db.query("select * from loan_tbl where fk_employee_email=?",[employee_email],callback);
+    }
 }
 module.exports=loan;
