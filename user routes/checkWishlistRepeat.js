@@ -1,10 +1,9 @@
-var product=require('../user models/product_model');
+var CheckWishlistRepeat=require('../user models/wishlist_model');
 var express = require('express');
 var router = express.Router();
 
-
-  router.get('/:category_id',function(req,res,next){
-    product.getProductByCategoryId(req.params.category_id,function(err,rows){
+  router.post('/',function(req,res,next){
+    CheckWishlistRepeat.checkRepeatProduct(req.body,function(err,rows){
      if(err)
      {
      res.json(err);
@@ -14,4 +13,5 @@ var router = express.Router();
      }
     });
   });
+
   module.exports=router;

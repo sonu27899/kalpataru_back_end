@@ -31,13 +31,18 @@ var TopSellingProduct=require('./admin routes/topsellingproduct_route');
 var productpricesum=require('./admin routes/product_prize_sum_route');
 var userDetailByorder=require('./admin routes/getUserDetailsByOrder_route');
 var customerinvoice=require('./admin routes/customer_invoice_route');
+var user_password=require('./admin routes/users');
 
 //User
 var loginByEmail= require('./user routes/loginbyemail');
-
+var search=require('./user routes/search_route');
 var wish=require('./user routes/wishlist_route'); 
 var productByCategoryId=require('./user routes/productByCategoryId');
 var addtoCart=require('./user routes/cart_route');
+var checkRepeatProduct=require('./user routes/checkRepeatProduct');
+var checkRepeatWishlist=require('./user routes/checkWishlistRepeat');
+var forget=require('./user routes/forgot_password');
+var mail=require('./user routes/mail_route');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -97,6 +102,7 @@ app.use('/TopSellingProduct',TopSellingProduct);
 app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
+app.use('/userPassword',user_password);
 
 
 
@@ -106,7 +112,11 @@ app.use('/userproductByCategoryId',productByCategoryId);
 app.use('/addtocart',addtoCart);
 app.use('/wishlist',wish);
 app.use('/loginbyemail',loginByEmail);
-
+app.use('/search',search);
+app.use('/checkRepeatProduct',checkRepeatProduct);
+app.use('/checkRepeatWishlist',checkRepeatWishlist);
+app.use('/forget',forget);
+app.use('/mail',mail);
 
 //Employee
 app.use('/emplogin',emplogin);

@@ -38,8 +38,8 @@ router.get('/',function(req,res,next){
     });
   });
 
-  router.delete('/:user_name',function(req,res,next){
-    wish.deleteProduct(req.params.user_name,req.body,function(err,rows){
+  router.delete('/:fk_user_email/:fk_product_id',function(req,res,next){
+    wish.deleteProduct(req.params.fk_user_email,req.params.fk_product_id,function(err,rows){
      if(err)
      {
      res.json(err);
