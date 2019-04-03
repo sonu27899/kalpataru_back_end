@@ -33,14 +33,20 @@ var TopSellingProduct=require('./routes/topsellingproduct_route');
 var productpricesum=require('./routes/product_prize_sum_route');
 var userDetailByorder=require('./routes/getUserDetailsByOrder_route');
 var customerinvoice=require('./routes/customer_invoice_route');
-
-
-
+var leaveManagement=require('./routes/leave_management_route');
+var HighToLow=require('./routes/FilterHighToLow');
+var LowToHigh=require('./routes/FilterLowToHigh');
+var FilterInBetweenPrice=require('./routes/FilterInBetweenPrice');
+var FilterInBetweenHeight=require('./routes/FilterInBetweenHeight');
+var FilterInBetweenWidth=require('./routes/FilterInBetweenWidth');
+var FilterInBetweenDepth=require('./routes/FilterInBetweenDepth');
 //Employee
+var leave_type=require('./employee routes/leave_type_route');
+var leave=require('./employee routes/leave_route');
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
 var empbill_details=require('./employee routes/bill_details_route');
-
+var empproduct=require('./employee routes/product_route');
 var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
@@ -67,8 +73,9 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//admin
 app.use('/login',login);
-
+app.use('/leaveManagement',leaveManagement);
 app.use('/update_product_without_pic',ProductWithoutImage);
 app.use('/product',product);
 app.use('/TopProduct',TopProduct);
@@ -90,15 +97,20 @@ app.use('/TopSellingProduct',TopSellingProduct);
 app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
-
-
-
+app.use('/HighToLow',HighToLow);
+app.use('/LowToHigh',LowToHigh);
+app.use('/FilterInBetweenPrice',FilterInBetweenPrice);
+app.use('/FilterInBetweenHeight',FilterInBetweenHeight);
+app.use('/FilterInBetweenWidth',FilterInBetweenWidth);
+app.use('/FilterInBetweenDepth',FilterInBetweenDepth);
 //Employee
+app.use('/leaveType',leave_type);
+app.use('/leave',leave);
 app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);
 app.use('/empgetbilldetails',empbill_details);
 app.use('/loanemp',loanemp);
-
+app.use('/empproduct',empproduct);
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);
 app.use('/empdoneempsalary',allempdonesalary);
