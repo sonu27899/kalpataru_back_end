@@ -54,6 +54,8 @@ var empmywork=require('./employee routes/my_work_route');
 var empgetdelieveryboy=require('./employee routes/get_delievery_boy_route');
 var update_product_without_pic=require('./employee routes/update_product_without_pic');
 var empmyloan=require('./employee routes/myloan_route');
+var productimage=require('./employee routes/get_image_route');
+var addimage=require('./employee routes/add_image_route');
 
 var app = express();
 
@@ -123,6 +125,8 @@ app.use('/empviewwork',empmywork);
 app.use('/empgetdelieveryboy',empgetdelieveryboy);
 app.use('/update_product_without_pic',update_product_without_pic);
 app.use('/empmyloan',empmyloan);
+app.use('/get_image',productimage);
+app.use('/add_image',addimage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
