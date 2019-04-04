@@ -32,6 +32,12 @@ var productpricesum=require('./admin routes/product_prize_sum_route');
 var userDetailByorder=require('./admin routes/getUserDetailsByOrder_route');
 var customerinvoice=require('./admin routes/customer_invoice_route');
 var user_password=require('./admin routes/users');
+var HighToLow=require('./admin routes/FilterHighToLow');
+var LowToHigh=require('./admin routes/FilterLowToHigh');
+var FilterInBetweenPrice=require('./admin routes/FilterInBetweenPrice');
+var FilterInBetweenHeight=require('./admin routes/FilterInBetweenHeight');
+var FilterInBetweenWidth=require('./admin routes/FilterInBetweenWidth');
+var FilterInBetweenDepth=require('./admin routes/FilterInBetweenDepth');
 
 //User
 var loginByEmail= require('./user routes/loginbyemail');
@@ -105,6 +111,12 @@ app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
 app.use('/userPassword',user_password);
+app.use('/HighToLow',HighToLow);
+app.use('/LowToHigh',LowToHigh);
+app.use('/FilterInBetweenPrice',FilterInBetweenPrice);
+app.use('/FilterInBetweenHeight',FilterInBetweenHeight);
+app.use('/FilterInBetweenWidth',FilterInBetweenWidth);
+app.use('/FilterInBetweenDepth',FilterInBetweenDepth);
 
 
 

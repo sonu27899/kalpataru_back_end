@@ -1,4 +1,4 @@
-var SortingFilter=require('../models/dashboard_model');
+var SortingFilter=require('../admin models/dashboard_model');
 var express = require('express');
 var router = express.Router();
 

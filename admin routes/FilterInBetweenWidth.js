@@ -1,4 +1,4 @@
-var FilterInBetweenWidth=require('../models/dashboard_model');
+var FilterInBetweenWidth=require('../admin models/dashboard_model');
 var express = require('express');
 var router = express.Router();
 
