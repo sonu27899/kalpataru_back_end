@@ -8,7 +8,7 @@ var cart={
     },       
     addToCart:function(item,callback){
         console.log(item);
-          return db.query("insert into cart_tbl values(?,?,?,?,?)",[item.fk_product_id,item.size,item.qty,item.fk_user_email,item.payment_option],callback);        
+          return db.query("insert into cart_tbl values(?,?,?,?)",[item.fk_product_id,item.qty,item.fk_user_email,item.payment_option],callback);        
         },
     deleteProduct:function(fk_user_email,fk_product_id,callback){
         console.log(fk_user_email,fk_product_id);

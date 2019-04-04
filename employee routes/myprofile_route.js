@@ -11,6 +11,17 @@ router.get("/:employee_email", function(req, res, next) {
   });
 });
 
+router.get("/", function(req, res, next) {
+  profile.getAllEmployee(function(err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows);
+    }
+  });
+});
+
+
 router.put("/:employee_email", function(req, res, next) {
     profile.updateProfile(req.params.employee_email,req.body, function(err, rows) {
       if (err) {
