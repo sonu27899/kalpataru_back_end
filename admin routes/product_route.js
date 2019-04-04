@@ -61,8 +61,8 @@ router.delete('/:product_id', function (req, res, next) {
   });
 });
 
-router.post('/', function (req, res, next) {
-  product.addProduct(req.body, function (err, rows) {
+router.post('/',upload.single('product_image'), function (req, res, next) {
+  product.addProduct(req.body,req.file.filename, function (err, rows) {
     if (err) {
       res.json(err);
     }
@@ -83,7 +83,7 @@ router.post('/', function (req, res, next) {
 //    }
 //   });
 // });
-module.exports = router;
+
 
 
 
