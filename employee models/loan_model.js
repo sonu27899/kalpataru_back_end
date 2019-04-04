@@ -13,7 +13,7 @@ var loan={
         return db.query("select l.*,e.* from loan_tbl l,employee_tbl e where l.fk_employee_email=e.employee_email And l.loan_id=?",[loan_id],callback);
     },
     addLoanNotification:function(item,callback){
-        console.log(item);
+        // console.log(item);
         let loan_status="reject";
         var issued_date=new Date(item.loan_issued_date);
         var last_installment_date=new Date(item.last_installment_date);

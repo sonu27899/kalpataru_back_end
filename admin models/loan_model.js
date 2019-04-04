@@ -21,7 +21,7 @@ var loan_delete={
             return db.query("select * from loan_tbl where loan_status='accept'",[loan_status],callback); 
         },
     updateRejectedLoanReason:function(item,callback){
-        console.log(item);
+        // console.log(item);
         return db.query("update loan_tbl set rejected_reason=? where loan_id=?",[item.rejected_reason,item.loan_id],callback);
         
     },
