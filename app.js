@@ -42,7 +42,7 @@ var addtoCart=require('./user routes/cart_route');
 //Employee
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
-var empbill_details=require('./employee routes/bill_details_route');
+var empbill_details=require('./employee routes/order_details_route');
 var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
@@ -56,7 +56,9 @@ var update_product_without_pic=require('./employee routes/update_product_without
 var empmyloan=require('./employee routes/myloan_route');
 var productimage=require('./employee routes/get_image_route');
 var addimage=require('./employee routes/add_image_route');
-
+var forgetpass=require('./employee routes/forget_passsword_route');
+var sendemail=require('./employee routes/send_email_route');
+var addleave=require('./employee routes/leave_route');
 var app = express();
 
 
@@ -114,7 +116,7 @@ app.use('/loginbyemail',loginByEmail);
 app.use('/emplogin',emplogin);
 app.use('/empviewbill',empviewbill);
 app.use('/empgetbilldetails',empbill_details);
-app.use('/loanemp',loanemp);
+app.use('/emploan',loanemp);
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);
 app.use('/empdoneempsalary',allempdonesalary);
@@ -127,6 +129,10 @@ app.use('/update_product_without_pic',update_product_without_pic);
 app.use('/empmyloan',empmyloan);
 app.use('/get_image',productimage);
 app.use('/add_image',addimage);
+app.use('/forgetpassword',forgetpass);
+app.use('/sendemail',sendemail);
+app.use('/addleave',addleave);
+app.use('/empmyleave',addleave);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

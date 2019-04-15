@@ -26,6 +26,10 @@ var product={
          return db.query("insert into product_image_tbl(fk_product_id,product_image2) values(?,?)",[item.fk_product_id,filename],callback)
             
     },
+    addimagetable:function(item,filename,callback)
+    {
+        return db.query("insert into product_image_tbl(fk_product_id,product_image2,product_image3) values(?,?,?)",[item.fk_product_id,filename,filename],callback);
+    },
     updateimage:function(product_id,item,filename,callback)
     {
             

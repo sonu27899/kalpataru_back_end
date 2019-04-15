@@ -16,15 +16,17 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
-router.post('/',upload.single('product_image'), function (req, res, next) {
-    product.addImage(req.body,req.file.filename, function (err, rows) {
-        
-      if (err) {
-        res.json(err);
-      }
-      else {
-        res.json(rows);
-      }
+
+
+  router.post('/',upload.single('product_image'),function(req,res,next){
+    product.addimagetable(req.body,req.file.filename,function(err,rows){
+     if(err)
+     {
+     res.json(err);
+     }
+     else{
+     res.json(rows);
+     }
     });
   });
 
