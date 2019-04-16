@@ -49,6 +49,8 @@ var checkRepeatProduct=require('./user routes/checkRepeatProduct');
 var checkRepeatWishlist=require('./user routes/checkWishlistRepeat');
 var forget=require('./user routes/forgot_password');
 var mail=require('./user routes/mail_route');
+var ordertable=require('./user routes/order');
+var orderdetailstable=require('./user routes/orderdetails');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -131,6 +133,8 @@ app.use('/checkRepeatProduct',checkRepeatProduct);
 app.use('/checkRepeatWishlist',checkRepeatWishlist);
 app.use('/forget',forget);
 app.use('/mail',mail);
+app.use('/ordertable',ordertable);
+app.use('/orderdetailstable',orderdetailstable);
 
 //Employee
 app.use('/emplogin',emplogin);
