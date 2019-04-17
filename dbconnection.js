@@ -1,10 +1,10 @@
 var mysql=require('mysql');
  var connection=mysql.createPool({
  
-host:'sql12.freesqldatabase.com',
- user:'sql12288390',
- password:'IITgrg9LQD',
- database:'sql12288390'
+host:'localhost',
+ user:'root',
+ password:'',
+ database:'kalptaru_database'
  
 });
  module.exports=connection;
