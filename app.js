@@ -51,6 +51,7 @@ var forget=require('./user routes/forgot_password');
 var mail=require('./user routes/mail_route');
 var ordertable=require('./user routes/order');
 var orderdetailstable=require('./user routes/orderdetails');
+var changeqty=require('./user routes/change_qty');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -135,6 +136,7 @@ app.use('/forget',forget);
 app.use('/mail',mail);
 app.use('/ordertable',ordertable);
 app.use('/orderdetailstable',orderdetailstable);
+app.use('/changeqty',changeqty);
 
 //Employee
 app.use('/emplogin',emplogin);

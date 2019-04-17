@@ -50,16 +50,16 @@ router.get('/',function(req,res,next){
   //   });
   // });
  
-  // router.put('/:user_email',function(req,res,next){
-  //   cart.updatePayment(req.params.user_email,req.body,function(err,rows){
-  //    if(err)
-  //    {
-  //    res.json(err);
-  //    }
-  //    else{
-  //    res.json(rows);
-  //    }
-  //   });
-  // });
+  router.put('/:product_id/:product_qty',function(req,res,next){
+    orderdetails.UpdateProductQtyForOrder(req.params.product_id,req.params.product_qty,req.body,function(err,rows){
+     if(err)
+     {
+     res.json(err);
+     }
+     else{
+     res.json(rows);
+     }
+    });
+  });
 
   module.exports=router;
