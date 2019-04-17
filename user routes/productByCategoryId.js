@@ -1,4 +1,4 @@
-var product=require('../admin models/product_model');
+var product=require('../user models/product_model');
 var express = require('express');
 var router = express.Router();
 

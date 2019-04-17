@@ -15,7 +15,7 @@ var category={
         },
     updateCategory:function(item,callback){
             return db.query("update category_tbl set category_name=? where category_id=?",[item.category_name,item.category_id],callback);
-            console.log(item);
+            // console.log(item);
         },
     getCategoryByName:function(category_name,callback){
             return db.query("select * from category_tbl where category_name=?",[category_name],callback);

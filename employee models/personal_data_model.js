@@ -5,6 +5,9 @@ var profile={
     },
     updateProfile(employee_email,item,callback){
         return db.query("update employee_tbl set employee_name=?,employee_mobileno=?,employee_city=?,employee_gender=?,employee_address=? where employee_email=?",[item.employee_name,item.employee_mobileno,item.employee_city,item.employee_gender,item.employee_address,employee_email],callback);
+    },
+    getAllEmployee(callback){
+        return db.query("select * from employee_tbl",callback);
     }
 }
 module.exports=profile;

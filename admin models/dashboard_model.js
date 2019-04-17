@@ -22,6 +22,26 @@ var dashboard={
     getUserDetailsByorder:function(callback){
         return db.query("select p.*,u.*,o.* from product_tbl p,user_tbl u,order_tbl o where u.user_email=o.fk_user_email and p.product_id=o.fk_product_id",callback);
     },
+
+    //userapp query
+    getAllProductHighToLow:function(callback){
+        return db.query("SELECT * FROM product_tbl ORDER BY product_price DESC",callback);
+    },
+    getAllProductLowToHigh:function(callback){
+        return db.query("SELECT * FROM product_tbl ORDER BY product_price",callback);
+    },
+    getAllProductPriceInBetween:function(first,last,callback){
+        return db.query("SELECT * from product_tbl WHERE product_price BETWEEN ? AND ?",[first,last],callback);
+    },
+    getAllProductHeightInBetween:function(first,last,callback){
+        return db.query("SELECT * from product_tbl WHERE product_height BETWEEN ? AND ?",[first,last],callback);
+    },
+    getAllProductWidthInBetween:function(first,last,callback){
+        return db.query("SELECT * from product_tbl WHERE product_width BETWEEN ? AND ?",[first,last],callback);
+    },
+    getAllProductDepthInBetween:function(first,last,callback){
+        return db.query("SELECT * from product_tbl WHERE product_depth BETWEEN ? AND ?",[first,last],callback);
+    }
    
 };
 module.exports=dashboard;
