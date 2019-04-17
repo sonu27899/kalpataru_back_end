@@ -37,6 +37,7 @@ var leaveManagement=require('./admin routes/leave_status_route');
 var loanId=require('./admin routes/getLoanId_route');
 var countCategory=require('./admin routes/countCategoryid_route');
 var countEmployee= require('./admin routes/CountEmployee_route');
+var getBillDetail= require('./admin routes/getbilldetails_route');
 //User
 var loginByEmail= require('./user routes/loginbyemail');
 
@@ -47,7 +48,7 @@ var addtoCart=require('./user routes/cart_route');
 //Employee
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
-var empbill_details=require('./employee routes/order_details_route');
+var orderDetail=require('./employee routes/order_details_route');
 var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
@@ -83,6 +84,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 //Admin
+app.use('/getBillDetail',getBillDetail);
 app.use('/countEmployee',countEmployee);
 app.use('/countCategory',countCategory);
 app.use('/rejectLeave',rejectLeave);
@@ -125,8 +127,9 @@ app.use('/loginbyemail',loginByEmail);
 
 //Employee
 app.use('/emplogin',emplogin);
+app.use('/orderDetail',orderDetail);
 app.use('/empviewbill',empviewbill);
-app.use('/empgetbilldetails',empbill_details);
+
 app.use('/emploan',loanemp);
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);

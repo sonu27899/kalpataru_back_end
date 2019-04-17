@@ -13,7 +13,8 @@ var employee={
         },
     addEmployee:function(item,callback){
         var status="Pending";
-            return db.query("insert into employee_tbl values(?,?,?,?,?,?,?,?,?,?,?)",[item.employee_email,item.employee_password,item.employee_name,item.employee_joining_date,item.employee_salary,item.employee_designation,item.employee_mobileno,item.employee_city,item.employee_gender,item.employee_address,status],callback);        
+        var pass="kalptaru";
+            return db.query("insert into employee_tbl values(?,?,?,?,?,?,?,?,?,?,?)",[item.employee_email,pass,item.employee_name,item.employee_joining_date,item.employee_salary,item.employee_designation,item.employee_mobileno,item.employee_city,item.employee_gender,item.employee_address,status],callback);        
         },
     updateEmployee:function(employee_email,item,callback){
             return db.query("update employee_tbl set employee_password=?,employee_name=?,employee_joining_date=?,employee_salary=?,employee_designation=?,employee_mobileno=?,employee_city=?,employee_gender=?,employee_address=?,salary_status=? where employee_email=?",[item.employee_password,item.employee_name,item.employee_joining_date,item.employee_salary,item.employee_designation,item.employee_mobileno,item.employee_city,item.employee_gender,item.employee_address,item.salary_status,employee_email],callback);
