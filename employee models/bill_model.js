@@ -10,6 +10,11 @@ var bill={
         return db.query("select od.*,p.*,c.* from order_details_tbl od,product_tbl p,category_tbl c where od.fk_category_id=c.category_id AND od.fk_product_id=p.product_id And od.fk_order_id=?",[order_id],callback);
     },
   
+    getOrderDetails(order_id,callback)
+    {
+        console.log(order_id);
+        return db.query("select od.*,p.*,c.* from order_details_tbl od,product_tbl p,category_tbl c where od.fk_product_id=p.product_id And od.fk_category_id=c.category_id And od.fk_order_id=?",[order_id],callback);
+    }
 
 }
 module.exports=bill;

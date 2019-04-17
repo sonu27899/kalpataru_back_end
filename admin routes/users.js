@@ -1,4 +1,3 @@
-var user=require('../admin models/user_model');
 var express = require('express');
 var router = express.Router();
 

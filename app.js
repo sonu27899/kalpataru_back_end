@@ -10,6 +10,7 @@ var usersRouter = require('./employee routes/users');
 
 
 //Admin
+var rejectLeave= require('./employee routes/rejectLeave_route'); 
 var login= require('./admin routes/login_route');
 var product=require('./admin routes/product_route');
 var TopProduct=require('./admin routes/toporderofproduct_route');
@@ -31,32 +32,24 @@ var TopSellingProduct=require('./admin routes/topsellingproduct_route');
 var productpricesum=require('./admin routes/product_prize_sum_route');
 var userDetailByorder=require('./admin routes/getUserDetailsByOrder_route');
 var customerinvoice=require('./admin routes/customer_invoice_route');
-var user_password=require('./admin routes/users');
-var HighToLow=require('./admin routes/FilterHighToLow');
-var LowToHigh=require('./admin routes/FilterLowToHigh');
-var FilterInBetweenPrice=require('./admin routes/FilterInBetweenPrice');
-var FilterInBetweenHeight=require('./admin routes/FilterInBetweenHeight');
-var FilterInBetweenWidth=require('./admin routes/FilterInBetweenWidth');
-var FilterInBetweenDepth=require('./admin routes/FilterInBetweenDepth');
-
+var leave=require('./admin routes/getleave_route');
+var leaveManagement=require('./admin routes/leave_status_route');
+var loanId=require('./admin routes/getLoanId_route');
+var countCategory=require('./admin routes/countCategoryid_route');
+var countEmployee= require('./admin routes/CountEmployee_route');
+var getBillDetail= require('./admin routes/getbilldetails_route');
 //User
 var loginByEmail= require('./user routes/loginbyemail');
-var search=require('./user routes/search_route');
+
 var wish=require('./user routes/wishlist_route'); 
 var productByCategoryId=require('./user routes/productByCategoryId');
 var addtoCart=require('./user routes/cart_route');
-var checkRepeatProduct=require('./user routes/checkRepeatProduct');
-var checkRepeatWishlist=require('./user routes/checkWishlistRepeat');
-var forget=require('./user routes/forgot_password');
-var mail=require('./user routes/mail_route');
-var ordertable=require('./user routes/order');
-var orderdetailstable=require('./user routes/orderdetails');
-var changeqty=require('./user routes/change_qty');
 
 //Employee
 var emplogin=require('./employee routes/login_route');
 var empviewbill=require('./employee routes/bill_route');
-var empbill_details=require('./employee routes/order_details_route'); 
+// var empbill_details=require('./employee routes/order_details_route'); 
+var orderDetail=require('./employee routes/order_details_route');
 var allempsalary=require('./employee routes/salary_route');
 var allemppendingsalary=require('./employee routes/pending_salary_route');
 var allempdonesalary=require('./employee routes/done_salary_route');
@@ -92,6 +85,13 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 //Admin
+app.use('/getBillDetail',getBillDetail);
+app.use('/countEmployee',countEmployee);
+app.use('/countCategory',countCategory);
+app.use('/rejectLeave',rejectLeave);
+app.use('/loanId',loanId);
+app.use('/leave',leave);
+app.use('/leaveManagement',leaveManagement);
 app.use('/login',login);
 app.use('/update_product_without_pic',ProductWithoutImage);
 app.use('/signup',signup);
@@ -115,13 +115,6 @@ app.use('/TopSellingProduct',TopSellingProduct);
 app.use('/productpricesum',productpricesum);
 app.use('/userDetailByOrder',userDetailByorder);
 app.use('/customerInvoice',customerinvoice);
-app.use('/userPassword',user_password);
-app.use('/HighToLow',HighToLow);
-app.use('/LowToHigh',LowToHigh);
-app.use('/FilterInBetweenPrice',FilterInBetweenPrice);
-app.use('/FilterInBetweenHeight',FilterInBetweenHeight);
-app.use('/FilterInBetweenWidth',FilterInBetweenWidth);
-app.use('/FilterInBetweenDepth',FilterInBetweenDepth);
 
 
 
@@ -131,19 +124,13 @@ app.use('/userproductByCategoryId',productByCategoryId);
 app.use('/addtocart',addtoCart);
 app.use('/wishlist',wish);
 app.use('/loginbyemail',loginByEmail);
-app.use('/search',search);
-app.use('/checkRepeatProduct',checkRepeatProduct);
-app.use('/checkRepeatWishlist',checkRepeatWishlist);
-app.use('/forget',forget);
-app.use('/mail',mail);
-app.use('/ordertable',ordertable);
-app.use('/orderdetailstable',orderdetailstable);
-app.use('/changeqty',changeqty);
+
 
 //Employee
 app.use('/emplogin',emplogin);
+app.use('/orderDetail',orderDetail);
 app.use('/empviewbill',empviewbill);
-app.use('/empgetbilldetails',empbill_details);
+
 app.use('/emploan',loanemp);
 app.use('/empviewallempsalary',allempsalary);
 app.use('/emppendingempsalary',allemppendingsalary);

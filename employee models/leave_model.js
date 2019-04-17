@@ -11,7 +11,24 @@ var leave={
     getmyleave:function(employee_email,callback)
     {
         return db.query("select * from leave_tbl where fk_employee_email=?",[employee_email],callback);
-    }
+    },
+    getAllLeaveEmployee:function(callback){
+        return db.query("select * from leave_tbl",callback); 
+        },
+
+        updateLeaveStatus:function(leave_id,callback){
+            return db.query("update leave_tbl set leave_status='Accept' where leave_id=?",[leave_id],callback);
+            },
+        RejectLeaveStatus:function(leave_id,callback){
+            return db.query("update leave_tbl set leave_status='Reject' where leave_id=?",[leave_id],callback);
+           },
+        getAllLeaveStatus:function(leave_status,callback){
+            return db.query("select * from leave_tbl where leave_status='Accept'",[leave_status],callback); 
+            },
+        deleteLeaveReq:function(leave_id,callback){
+            return  db.query("delete from leave_tbl where leave_id=?",[leave_id],callback);
+            },
+    
 }
 
 module.exports=leave;
