@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get("/:order_id", function(req, res, next) {
     pastorder.getBillDetails(req.params.order_id,function(err, rows) {
-      if (err) {
+      if (err) { 
         res.json(err);
       } else {
         res.json(rows);

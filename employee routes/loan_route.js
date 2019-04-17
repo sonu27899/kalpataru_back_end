@@ -24,7 +24,7 @@ router.get("/", function(req, res, next) {
  
   router.post('/',function(req,res,next){
     loan.addLoanNotification(req.body,function(err,rows){
-     if(err)
+     if(err) 
      {
      res.json(err);
      }
