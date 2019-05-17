@@ -40,10 +40,19 @@ var countEmployee= require('./admin routes/CountEmployee_route');
 var getBillDetail= require('./admin routes/getbilldetails_route');
 //User
 var loginByEmail= require('./user routes/loginbyemail');
-
 var wish=require('./user routes/wishlist_route'); 
 var productByCategoryId=require('./user routes/productByCategoryId');
 var addtoCart=require('./user routes/cart_route');
+
+var search=require('./user routes/search_route');
+var checkRepeatProduct=require('./user routes/checkRepeatProduct');
+var checkRepeatWishlist=require('./user routes/checkWishlistRepeat');
+var forget=require('./user routes/forgot_password');
+var mail=require('./user routes/mail_route');
+var ordertable=require('./user routes/order');
+var orderdetailstable=require('./user routes/orderdetails');
+var changeqty=require('./user routes/change_qty');
+
 
 //Employee
 var emplogin=require('./employee routes/login_route');
@@ -124,6 +133,14 @@ app.use('/userproductByCategoryId',productByCategoryId);
 app.use('/addtocart',addtoCart);
 app.use('/wishlist',wish);
 app.use('/loginbyemail',loginByEmail);
+app.use('/search',search);
+app.use('/checkRepeatProduct',checkRepeatProduct);
+app.use('/checkRepeatWishlist',checkRepeatWishlist);
+app.use('/forget',forget);
+app.use('/mail',mail);
+app.use('/ordertable',ordertable);
+app.use('/orderdetailstable',orderdetailstable);
+app.use('/changeqty',changeqty);
 
 
 //Employee
